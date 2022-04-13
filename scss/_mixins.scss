@@ -1,0 +1,24 @@
+@mixin borderbox(
+    $color : black,
+    $size : 1px,
+    $style : solid
+){
+    border: $size $style $color;
+}
+
+@mixin flexbox(
+    $direction : column,
+    $justifyContent : center,
+    $alignItems : center,
+    $rowGap : 0px,
+    $columnGap : 0px,
+    $wrap : nowrap
+){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+    row-gap: $rowGap;
+    flex-wrap: $wrap;
+    column-gap: $columnGap;
+}

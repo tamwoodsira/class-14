@@ -1,0 +1,89 @@
+@media (min-width: 300px) {
+
+    .team {
+        padding: 2%;
+        display: flex;
+        flex-direction: column;
+        .progress-section {
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+        }
+        .progress-section > div {
+            height: 6vh;
+            background-color: whitesmoke;
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            row-gap: 20px;
+        }
+
+        %progress-span {
+            background-color: $defaultColor;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            color: white;
+            padding: 1%;
+        }
+
+        .html-css {
+            @extend %progress-span;
+            width: 83%;
+        }
+        .javascript {
+            @extend %progress-span;
+            width: 75%;
+        }
+        .react {
+            @extend %progress-span;
+            width: 90%;
+        }
+        .version-control {
+            @extend %progress-span;
+            width: 89%;
+        }
+
+        
+    }
+
+    .contact {
+        padding: 2%;
+        @include flexbox(column,unset,unset,20px);
+        > h2 {
+            color: $defaultColor;
+            border-color: $defaultColor;
+        }
+        > p {
+            @include flexbox(column,unset,unset,20px);
+        }
+        form {
+            padding: 3%;
+            @include flexbox(column,unset,center,30px);
+        }
+        [type="text"], [type="email"], textarea {
+            @include borderbox(darkgray);
+            font-size: 16px;
+            padding: 3%;
+            font-family: $defaultFont;
+            width: 80%;
+        }
+        [type="submit"] {
+            padding: 3%;
+            background-color: $defaultColor;
+            color: white;
+            width: 86%;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        textarea {
+            height: 30vh;
+        }
+    }
+
+    .footer {
+        text-align: center;
+    }
+}
