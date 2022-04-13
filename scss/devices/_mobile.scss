@@ -1,18 +1,131 @@
 @media (min-width: 300px) {
 
-    .team {
-        padding: 2%;
+    .gallery {
         display: flex;
         flex-direction: column;
+        row-gap: 50px;
+        article {
+            @include flexbox(column,center,center,20px);
+        }
+        
+        .project {
+            width: 50vh;
+            height: 50vh;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .project-1 {
+            @extend .project;
+            background: url("/img/gallery/p1.jpg");
+        }
+        .project-2 {
+            @extend .project;
+            background: url("/img/gallery/p2.jpg");
+        }
+        .project-3 {
+            @extend .project;
+            background: url("/img/gallery/p3.jpg");
+        }
+        .project-4 {
+            @extend .project;
+            background: url("/img/gallery/p4.jpg");
+        }
+        
+    }
+
+    .team {
+        padding: 4%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+
+        %btn-profile {
+            background-color: $defaultColor;
+            color: white;
+            padding: 3%;
+            text-decoration: none;
+        }
+
+        [class^="profile-"]{
+            @include flexbox(column,center,center,15px);
+            color: black;
+
+            & a {
+                @extend %btn-profile;
+            }
+        }
+
+        aside {
+            display: flex;
+            width: 50vh;
+            height: 50vh;
+            border-radius: 50%;
+        }
+
+        .profile-1 > aside {
+            @include bgBox("/img/member1.png",center,cover);
+        }
+        .profile-2 > aside {
+            @include bgBox("/img/member2.png",center,cover);
+        }
+        .profile-3 > aside {
+            @include bgBox("/img/member3.png",center,cover);
+        }
+        .profile-4 > aside {
+            @include bgBox("/img/member4.png",center,cover);
+        }
+
+        aside h3 {
+            color: white;
+            border-color: white;
+        }
+
+        aside > div {
+            color: white;
+            background-color: $defaultColor;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            @include flexbox(column,center,center,25px);
+            opacity: 0;
+        }
+
+        aside:hover div {
+            opacity: 1;
+            animation: profile-hover 1s ease-in-out;         
+        }
+
+        [class^="fa-"] {
+            color: white;
+        }
+
+        %innerHeader {
+            color: $defaultColor;
+            border-color: $defaultColor;
+        }
+        h2 {
+            @extend %innerHeader;
+        }
+        h3 {
+            @extend %innerHeader;
+        }
+        article {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            padding-bottom: 15%;
+        }
         .progress-section {
             display: flex;
             flex-direction: column;
             row-gap: 20px;
         }
         .progress-section > div {
-            height: 6vh;
+            height: 5vh;
             background-color: whitesmoke;
-            width: 80%;
+            width: 100%;
             display: flex;
             justify-content: center;
             flex-direction: column;
@@ -23,6 +136,8 @@
             background-color: $defaultColor;
             height: 100%;
             display: flex;
+            font-size: 18px;
+            font-weight: 600;
             align-items: center;
             color: white;
             padding: 1%;

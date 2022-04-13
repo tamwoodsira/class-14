@@ -22,3 +22,15 @@
     flex-wrap: $wrap;
     column-gap: $columnGap;
 }
+
+@mixin bgBox(
+    $bg,
+    $bgPosition : center,
+    $bgSize : contain,
+    $bgRepeat : no-repeat
+){
+    background: url($bg);
+    background-position: $bgPosition;
+    background-size: $bgSize;
+    background-repeat: $bgRepeat;
+}
